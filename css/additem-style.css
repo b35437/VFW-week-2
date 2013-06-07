@@ -1,0 +1,93 @@
+html {
+	height: 200%;
+}
+
+body{
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.6, rgb(194,158,129)),
+		color-stop(1, rgb(150,116,88))
+	);
+}
+
+h1 {
+	font-family: fantasy;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 70px;
+}
+
+legend{
+	font-family: fantasy;
+	font: 28px;
+	color: #000;
+	font-weight: bold;
+
+}
+
+p {
+	font-family: sans-serif;
+	
+}
+.header {
+	position: relative;
+}
+
+a:link {
+	color: #a93636;
+}
+
+a:visited {
+	color: #0f5ff4;
+}
+
+a:hover {
+	font-size: 17px;
+	color: white;
+}
+
+#container {
+	font-family: fantasy;
+}
+
+.boxlabel label {
+	display: block;
+	
+}
+
+.boxlabel {
+	margin-bottom: 5px;
+}
+
+#radioselect {
+	height: 108px;
+}
+
+#radioselect label{
+	float: left;
+}
+
+#radioselect input {
+	float: left;
+}
+
+#radioselect label + input {
+	clear: both;
+}
+#savegear {
+	margin-right: 10px;
+}
+
+#comboboxlabel {
+	margin-bottom: 5px;
+}
+
+#lvlslidernum {
+	font-weight: bold;
+}
+
+
