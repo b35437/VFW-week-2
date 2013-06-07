@@ -1,5 +1,5 @@
 html {
-	height: 200%;
+	height: 210%;
 }
 
 body{
@@ -27,6 +27,11 @@ legend{
 	color: #000;
 	font-weight: bold;
 
+}
+
+span {
+	font-weight: bold;
+	font: 14px;
 }
 
 p {

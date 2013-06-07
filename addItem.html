@@ -16,26 +16,27 @@
 		<!-- DROID Viewport -->
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<!-- !CSS -->
-		<link rel="stylesheet" href="css/addequipment.css">
+		<link rel="stylesheet" href="css/additem-style.css">
 		<!-- JavaScript -->
-		<script type="text/javascript" src="js/equipment.js"></script>
+		<script type="text/javascript" src="js/additem-script.js"></script>
 		<!--Title-->
 		<title>Add Equipment Form</title>
 	</head>
 	<!-- !Body -->
 	<body>
 		<div class="header">
-			<img src="img/addequipment.png" alt="Equipment List">
+			<img src="img/ashield-small.png" alt="Equipment List">
 			<h1>dd Equipment</h1>
 		</div>
 		<!--Add Form-->
 		<form action="#" method="post">
 			<fieldset>
 				<legend>Equipment Information</legend>
+				<span>(*)Fields are Required.</span>
 				<div id="container">
 				<!-- EQUIPMENT NAME TEXT BOX-->
-					<div class="boxlabel"><label for="ename">Equipment Name:</label><input type="text" id="ename" size="30" /></div>
-					<div class="boxlabel"><label for="islot">Item Slot:</label>
+					<div class="boxlabel"><label for="ename">*Equipment Name:</label><input type="text" id="ename" size="30" /></div>
+					<div class="boxlabel"><label for="islot">*Item Slot:</label>
 					<!-- COMBOBOX SELECTION FOR ITEM SLOT -->
 					<select id="islot">
 						<optgroup label="Armor">
