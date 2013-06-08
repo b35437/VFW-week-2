@@ -1,5 +1,5 @@
 html {
-	height: 210%;
+	height:auto;
 }
 
 body{
@@ -10,6 +10,9 @@ body{
 		color-stop(0.6, rgb(194,158,129)),
 		color-stop(1, rgb(150,116,88))
 	);
+}
+ul {
+	margin-left: -30px;
 }
 
 h1 {
@@ -27,11 +30,6 @@ legend{
 	color: #000;
 	font-weight: bold;
 
-}
-
-span {
-	font-weight: bold;
-	font: 14px;
 }
 
 p {
@@ -55,44 +53,37 @@ a:hover {
 	color: white;
 }
 
-#container {
-	font-family: fantasy;
-}
-
-.boxlabel label {
+li {
 	display: block;
-	
+}
+li label {
+	display: block;
+}
+li input {
+	margin-bottom: 10px;
 }
 
-.boxlabel {
-	margin-bottom: 5px;
+oi input {
+	margin-bottom: 10px;
 }
 
-#radioselect {
-	height: 108px;
-}
 
-#radioselect label{
+#radiogroup {
+	height: 110px;
+
+}
+#radiogroup label {
 	float: left;
 }
 
-#radioselect input {
+#radiogroup input {
 	float: left;
 }
 
-#radioselect label + input {
+#radiogroup label + input {
 	clear: both;
 }
-#savegear {
-	margin-right: 10px;
-}
 
-#comboboxlabel {
-	margin-bottom: 5px;
-}
 
-#lvlslidernum {
-	font-weight: bold;
-}
 
 

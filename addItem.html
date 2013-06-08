@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Add Equipment information based on game of your choice">
 		<meta name="keywords" content="game, equipment list" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="index, follow"/>
 		<meta name="viewport" content="user-scalable=no, width=device-width"/>
 		<meta name="HandheldFriendly" content="true"/>
@@ -17,8 +17,6 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<!-- !CSS -->
 		<link rel="stylesheet" href="css/additem-style.css">
-		<!-- JavaScript -->
-		<script type="text/javascript" src="js/additem-script.js"></script>
 		<!--Title-->
 		<title>Add Equipment Form</title>
 	</head>
@@ -29,70 +27,41 @@
 			<h1>dd Equipment</h1>
 		</div>
 		<!--Add Form-->
-		<form action="#" method="post">
-			<fieldset>
+		<form action="#" method="post" id="equipmentForm">
+		<a href="#" id="cleardata">Clear Stored Data</a>&nbsp | &nbsp<a href="#" id="showdata">Display Data</a>&nbsp<a href="addItem.html" id="additem" style="display:none;">Add New Item</a>
+			<fieldset id="equipmentInfoFieldSet">
 				<legend>Equipment Information</legend>
-				<span>(*)Fields are Required.</span>
-				<div id="container">
+				<span>(*) Fields are Required.</span>
+				<ul id="errors"></ul>
+				<ul id="questions">
 				<!-- EQUIPMENT NAME TEXT BOX-->
-					<div class="boxlabel"><label for="ename">*Equipment Name:</label><input type="text" id="ename" size="30" /></div>
-					<div class="boxlabel"><label for="islot">*Item Slot:</label>
-					<!-- COMBOBOX SELECTION FOR ITEM SLOT -->
-					<select id="islot">
-						<optgroup label="Armor">
-							<option value="belt">Belt</option>
-							<option value="chest">Chest</option>
-							<option value="feet">Feet</option>
-							<option value="gloves">Gloves</option>
-							<option value="helmet">Helmet</option>
-							<option value="legs">Legs</option>
-							<option value="shoulders">Shoulders</option>
-							<option value="back">Back</option>
-						</optgroup>
-						<optgroup label="Weapons">
-							<option value="mainhand">Main Hand</option>
-							<option value="offhand">Off Hand</option>
-							<option value="twohand">Two Handed</option>
-						</optgroup>
-						<optgroup label="Accessory">
-							<option value="neck">Neck</option>
-							<option value="leftring">Left Ring</option>
-							<option value="rightring">Right Ring</option>
-						</optgroup>
-					</select>
-					</div>
+					<li><label for="ename">*Equipment Name:</label><input type="text" id="ename" /></li>
+					<li id="select"><label for="islot">*Item Slot:</label></li>
 					<!-- RADIO BUTTON SELECTION FOR RARITY -->
-					<div id="radioselect"> 
+					<div id="radiogroup">
 						<label name ="RB" for="rarity">Rarity:</label>
 						<input type="radio" checked value="Common" id="common" name="rarity" /><label for="common">Common</label>
 						<input type="radio" value="Uncommon" id="uncommon" name="rarity" /><label for="uncommon">Uncommon</label>
 						<input type="radio" value="Rare" id="rare" name="rarity" /><label for="rare">Rare</label>
 						<input type="radio" value="Epic" id="epic" name="rarity" /><label for="epic">Epic</label>
 					</div>
-					<br />
 					<!-- SLIDER -->
-					<div class="boxlabel">
-						<label for="lvlslider">Item Level:</label>
-						<span id="lvlslidernum">1<input type="range" min="1" max="60" name="lvlslider" />60</span>
-					</div>
+					<li><label for="lvlslider">Item Level:</label>
+					1<input type="range" min="1" max="60" name="lvlslider" id="islide" />60</li>
 					<!-- DATE SELECTION BOX -->
-					<div class="boxlabel">
-						<label for="dateadded">Date Added:</label>
-						<input type="date"/>
-					</div>
+					<li><label for="dateadded">Date Added:</label><input type="date" id="date" /></li>
 					<!-- CHECKBOX -->
-					<div id="comboboxlabel">
-						<input type="checkbox" id="savegear" />
-						<label for="savegear">Save to your item list?</label>
-						</div>
+					<oi><input type="checkbox" id="savegear" />&nbsp<label for="savegear">Save to your item list?</label></oi>
 					<!-- TEXT AREA -->
-					<div class="boxlabel"><label for="note">Additional Notes:</label>
-					<textarea id="note" rows="5" cols="30" >Add additional information here.</textarea></div>
-					<oi><input type="hidden" value="true" /></li> <!-- HIDDEN INPUT -->
-				</div>
+					<li><label for="note">Additional Notes:</label>
+					<textarea id="note"></textarea></li>
+					<li><input type="hidden" value="true" /></li> <!-- HIDDEN INPUT -->
+				</ul>
 			</fieldset>
-			<input type="submit" value="Add the item!" size="30" /> <!-- SUBMIT BUTTON -->			
+			<input type="submit" value="Add the item!" id="submit" /> <!-- SUBMIT BUTTON -->			
 		</form>
-		<a href="#">Clear Stored Data</a>&nbsp | &nbsp<a href="#">Display Data</a>
+		<a href="#" id="cleardata">Clear Stored Data</a>&nbsp | &nbsp<a href="#" id="showdata">Display Data</a>&nbsp<a href="addItem.html" id="additem" style="display:none;">Add New Item</a>
+		<!-- JavaScript -->
+		<script type="text/javascript" src="js/additem-script.js"></script>
 	</body>
 </html>
