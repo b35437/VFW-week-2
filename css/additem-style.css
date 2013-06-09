@@ -48,17 +48,14 @@ a:visited {
 	color: #0f5ff4;
 }
 
-a:hover {
-	font-size: 17px;
-	color: white;
-}
-
 li {
 	display: block;
 }
+
 li label {
 	display: block;
 }
+
 li input {
 	margin-bottom: 10px;
 }
@@ -67,11 +64,11 @@ oi input {
 	margin-bottom: 10px;
 }
 
-
 #radiogroup {
 	height: 110px;
 
 }
+
 #radiogroup label {
 	float: left;
 }
@@ -82,6 +79,35 @@ oi input {
 
 #radiogroup label + input {
 	clear: both;
+}
+
+#items ul{
+	margin-top: 30px;
+}
+
+#submit {
+	width: 300px;
+}
+
+#date {
+	width: 175px;
+}
+
+#ilist {
+	width: 175px;
+}
+
+#ename {
+	width: 175px;
+}
+
+#islide {
+	width: 175px;
+}
+
+#note {
+	width: 175px;
+	height: 50px;
 }
 
 

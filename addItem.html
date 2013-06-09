@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Name: Nathan Byarley -->
-<!-- Project: VFW Week 1 -->
+<!-- Project: VFW Week 2 -->
 <!-- Term: 1306 -->
 
 <html>   
@@ -26,9 +26,9 @@
 			<img src="img/ashield-small.png" alt="Equipment List">
 			<h1>dd Equipment</h1>
 		</div>
+		<a href="#" id="cleardata">Clear Stored Data</a>&nbsp | &nbsp<a href="#" id="showdata">Display Data</a>&nbsp<a href="addItem.html" id="additem" style="display:none;">Add New Item</a>
 		<!--Add Form-->
 		<form action="#" method="post" id="equipmentForm">
-		<a href="#" id="cleardata">Clear Stored Data</a>&nbsp | &nbsp<a href="#" id="showdata">Display Data</a>&nbsp<a href="addItem.html" id="additem" style="display:none;">Add New Item</a>
 			<fieldset id="equipmentInfoFieldSet">
 				<legend>Equipment Information</legend>
 				<span>(*) Fields are Required.</span>
@@ -47,7 +47,7 @@
 					</div>
 					<!-- SLIDER -->
 					<li><label for="lvlslider">Item Level:</label>
-					1<input type="range" min="1" max="60" name="lvlslider" id="islide" />60</li>
+					<input type="range" min="1" max="60" value="1" step="1" name="lvlslider" id="islide" /></li>
 					<!-- DATE SELECTION BOX -->
 					<li><label for="dateadded">Date Added:</label><input type="date" id="date" /></li>
 					<!-- CHECKBOX -->
@@ -60,7 +60,6 @@
 			</fieldset>
 			<input type="submit" value="Add the item!" id="submit" /> <!-- SUBMIT BUTTON -->			
 		</form>
-		<a href="#" id="cleardata">Clear Stored Data</a>&nbsp | &nbsp<a href="#" id="showdata">Display Data</a>&nbsp<a href="addItem.html" id="additem" style="display:none;">Add New Item</a>
 		<!-- JavaScript -->
 		<script type="text/javascript" src="js/additem-script.js"></script>
 	</body>

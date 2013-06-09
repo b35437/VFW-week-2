@@ -3,7 +3,7 @@
 //Term: 1306
 
 
-//wait until the DOm has loaded
+//wait until the DOM has loaded
 window.addEventListener("DOMContentLoaded", function() { 
 
 
@@ -11,30 +11,6 @@ window.addEventListener("DOMContentLoaded", function() {
 	function byId(b) {
 		var elementBy = document.getElementById(b);
 		return elementBy;
-	}
-	
-	//create selection field element
-	function listItems(){
-		//local variables
-		var formTag = document.getElementsByTagName("form");
-		var targetList = byId('select');
-		var createSelect = document.createElement('select');
-		
-		//give the select element the attribute of id="ilist"
-		createSelect.setAttribute("id", "ilist");
-		
-		//for loop to run through the itemSlot array
-		for(var i=0, j=itemSlot.length; i<j; i++) {
-			//local variables
-			var createOption = document.createElement('option');
-			var optText = itemSlot[i];
-			
-			createOption.setAttribute("value", optText);
-			createOption.innerHTML = optText;
-			createSelect.appendChild(createOption);
-		}
-		targetList.appendChild(createSelect);
-		
 	}
 	
 	//get the selected radio button function
@@ -57,9 +33,32 @@ window.addEventListener("DOMContentLoaded", function() {
 		} else {
 			saveGearValue = "Not saved to your list"
 		}
-	}
+	} 
+	//create selection field element
+	function listItems(){
+		//local variables
+		var formTag = document.getElementsByTagName("form");
+		var targetList = byId('select');
+		var createSelect = document.createElement('select');
+		
+		//give the select element the attribute of id="ilist"
+		createSelect.setAttribute("id", "ilist");
+		
+		//for loop to run through the itemSlot array
+		for(var i=0, j=itemSlot.length; i<j; i++) {
+			//local variables
+			var createOption = document.createElement('option');
+			var optText = itemSlot[i];
+			
+			createOption.setAttribute("value", optText);
+			createOption.innerHTML = optText;
+			createSelect.appendChild(createOption);
+		}
+		targetList.appendChild(createSelect);
+		
+	} 
 	
-	//
+	//alter CSS within JS by changing atributes.
 	function newDisplay(t) {
 		switch(t){
 			case "on":
@@ -85,8 +84,8 @@ window.addEventListener("DOMContentLoaded", function() {
 		//local variables
 		var randomID = Math.floor(Math.random()*10000001);
 		
-		getSelectedRadio();
-		getCheckboxValue();
+		getSelectedRadio(); //calls the radio function
+		getCheckboxValue(); //calls the checkbox function
 		
 		//get form information and store within an object
 		var equipment = {};
@@ -102,7 +101,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			localStorage.setItem(randomID, JSON.stringify(equipment));
 			
 			//notify the user, equipment has been added
-			alert("Equipment Added");
+			alert("Equipment has been Added");
 	}
 	//Get data function
 	function getData() {
@@ -117,12 +116,13 @@ window.addEventListener("DOMContentLoaded", function() {
 		var createDiv = document.createElement('div');
 		createDiv.setAttribute("id", "items");
 		
-		var makeList = document.createElement('ul');
-		createDiv.appendChild(makeList);
-		
 		document.body.appendChild(createDiv);
 		byId("items").style.display = "block";
 		
+		var createList = document.createElement('ul');
+		createDiv.appendChild(createList);	
+		
+		//for loop create the external ul/li tags for the data within localstorage
 		for(var i = 0, l = localStorage.length; i < l; i++){
 			var createListItem = document.createElement('li');
 			createList.appendChild(createListItem);
@@ -136,26 +136,29 @@ window.addEventListener("DOMContentLoaded", function() {
 			var createSubList = document.createElement('ul');
 			createListItem.appendChild(createSubList);
 			
-			//in loop
+			//in loop also creates the li tages for the actual data within localstorage
 			for(var y in objectString) {
 				var createSubListItem = document.createElement('li');
 				createSubList.appendChild(createSubListItem);
 				var optSubText = objectString[y][0]+" "+objectString[y][1];
+				
 				createSubListItem.innerHTML = optSubText;
 				}
 			}
 		}
 	}
 	
-	function clearLocal() {
+	//clears all data within localstorage as long as teh condtion is false
+	//if condition is true here is no data to remove
+	function clearLocalStorage() {
 		if(localStorage.length === 0){
 			alert("There is no data to clear");
 			
 		}else {
-		localStorage.clear();
-		alert("All Equipment has been removed");
-		window.location.reload();
-		return false;
+			localStorage.clear();
+			alert("All Equipment has been removed");
+			window.location.reload();
+			return false;
 			
 		}
 	}
@@ -176,7 +179,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 	//cleardata event
 	var removeDataLink = byId('cleardata');
-	removeDataLink.addEventListener("click", clearLocal);
+	removeDataLink.addEventListener("click", clearLocalStorage);
 	
 	//save event
 	var save = byId('submit');
