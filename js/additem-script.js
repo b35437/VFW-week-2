@@ -182,7 +182,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	removeDataLink.addEventListener("click", clearLocalStorage);
 	
 	//save event
-	var save = byId('submit');
+	var save = byId('button');
 	save.addEventListener("click", saveData);
 
 
